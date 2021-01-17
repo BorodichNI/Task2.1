@@ -4,16 +4,25 @@ public class Finder {
 
         AggregateList list1 = new AggregateList();
 
+
 //        for (int i : list1.AggregateList()) {
 //            System.out.print(i + " ");
 //        }
 //        System.out.println(" ");
 
         SecondMaxValue2 secondMaxValue2 = new SecondMaxValue2();
-        System.out.println(secondMaxValue2.findSecondMaxValue(list1.AggregateList()));
-        System.out.println("--");
+        try {
+            System.out.println(secondMaxValue2.findSecondMaxValue(list1.AggregateList()));
+        } catch (NullPointerException | IllegalInputException e) {
+            System.err.println(e.getMessage());
+        }
+
         SecondMaxValue1 secondMaxValue1 = new SecondMaxValue1();
-        System.out.println(secondMaxValue1.findSecondMaxValue(list1.AggregateList()));
+        try {
+            System.out.println(secondMaxValue1.findSecondMaxValue(list1.AggregateList()));
+        } catch (NullPointerException | IllegalInputException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
 }
