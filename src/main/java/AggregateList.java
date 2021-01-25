@@ -1,22 +1,30 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class AggregateList {
 
-    public ArrayList<Integer> AggregateList() {
+    public List<Integer> aggregateList() {
+        int size = 0;
+        Scanner scannerInput = new Scanner(System.in);
+        System.out.println("Enter array length: ");
 
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int index = 0; index < 10; index++) {
-            int number = (int) (Math.random() * 10 + 1);
-            list.add(number);
+        try {
+            size = scannerInput.nextInt();
+        } catch (InputMismatchException e) {
+            System.err.println("You entered not an integer");
+            System.exit(0);
         }
 
-        Set<Integer> set = new HashSet<>(list);
-        list.clear();
-        list.addAll(set);
-       // list = null;
+        List<Integer> numberList = new ArrayList<>();
+        System.out.println("Insert array elements:");
 
-        return list;
+        try {
+            for (int index = 0; index < size; index++) {
+                numberList.add(scannerInput.nextInt());
+            }
+        } catch (InputMismatchException e) {
+            System.err.println("Wrong input (Enter number)");
+            System.exit(0);
+        }
+        return numberList;
     }
 }
